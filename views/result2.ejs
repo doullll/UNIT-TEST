@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="index.css" />
+    <link
+      rel="stylesheet"
+      as="style"
+      crossorigin
+      href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdn-uicons.flaticon.com/2.3.0/uicons-solid-straight/css/uicons-solid-straight.css"
+    />
+
+    <title>UNIT TEST</title>
+  </head>
+  <body>
+    <div class="container">
+      <h1>UNIT TEST</h1>
+      <div class="container">
+        <p class="center" id="completeText">검사에 참여해주셔서 감사합니다.</p>
+        <p class="center" id="completeDesc">두 분의 커플 유형은 ..</p>
+        <p class="center" id="modifier">꿈꾸는 별의 항해자들</p>
+        <p class="center" id="type"><%= userType %></p>
+        <div id="coupleImg"></div>
+      </div>
+
+      <div class="one-dimension" id="first-dimension">
+        <p class="center dimension-name">감정 표현 방식</p>
+        <div class="respectively">
+          <span class="first-option">말</span
+          ><span class="second-option">행동</span>
+        </div>
+      </div>
+
+      <div class="one-dimension" id="second-dimension">
+        <p class="center dimension-name">위기 대응 방식</p>
+        <div class="respectively">
+          <span class="first-option">적극적</span
+          ><span class="second-option">수용적</span>
+        </div>
+      </div>
+
+      <div class="one-dimension" id="third-dimension">
+        <p class="center dimension-name">사회적 상호작용</p>
+        <div class="respectively">
+          <span class="first-option">사교적</span
+          ><span class="second-option">사적</span>
+        </div>
+      </div>
+
+      <div class="one-dimension" id="fourth-dimension">
+        <p class="center dimension-name">활동 선호도</p>
+        <div class="respectively">
+          <span class="first-option">활동적</span
+          ><span class="second-option">집콕러</span>
+        </div>
+      </div>
+
+      <p class="center desc" style="margin-bottom: 80px; margin-top: 60px">
+        어떤 어려움도 함께 적극적으로 넘는 이 커플은 사적인 모험에서 깊은 연결을
+        찾습니다. 그들은 밤하늘 아래 꿈을 꾸며, 말로 서로의 소망과 우려를
+        공유합니다. 함께하는 시간은 언제나 새로운 발견으로 가득 차 있습니다.
+      </p>
+
+      <div class="center-container">
+        <button class="nextButton" id="homeButton">홈으로 이동</button>
+      </div>
+    </div>
+    <script>
+      document
+        .getElementById("homeButton")
+        .addEventListener("click", function () {
+          window.location.href = "/";
+        });
+
+      document.addEventListener("DOMContentLoaded", function () {
+        const userType = "<%= userType %>";
+
+        if (userType[0] === "V") {
+          document.querySelector(
+            "#first-dimension .first-option"
+          ).style.fontWeight = "bold";
+        } else if (userType[0] === "B") {
+          document.querySelector(
+            "#first-dimension .second-option"
+          ).style.fontWeight = "bold";
+        }
+
+        if (userType[1] === "A") {
+          document.querySelector(
+            "#second-dimension .first-option"
+          ).style.fontWeight = "bold";
+        } else if (userType[1] === "R") {
+          document.querySelector(
+            "#second-dimension .second-option"
+          ).style.fontWeight = "bold";
+        }
+
+        if (userType[2] === "S") {
+          document.querySelector(
+            "#third-dimension .first-option"
+          ).style.fontWeight = "bold";
+        } else if (userType[2] === "P") {
+          document.querySelector(
+            "#third-dimension .second-option"
+          ).style.fontWeight = "bold";
+        }
+
+        if (userType[3] === "O") {
+          document.querySelector(
+            "#fourth-dimension .first-option"
+          ).style.fontWeight = "bold";
+        } else if (userType[3] === "H") {
+          document.querySelector(
+            "#fourth-dimension .second-option"
+          ).style.fontWeight = "bold";
+        }
+
+        document
+          .getElementById("homeButton")
+          .addEventListener("click", function () {
+            window.location.href = "/";
+          });
+      });
+    </script>
+  </body>
+</html>

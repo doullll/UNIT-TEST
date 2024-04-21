@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="index.css" />
+    <link
+      rel="stylesheet"
+      as="style"
+      crossorigin
+      href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdn-uicons.flaticon.com/2.3.0/uicons-solid-straight/css/uicons-solid-straight.css"
+    />
+    <title>UNIT TEST</title>
+  </head>
+  <body>
+    <h1>UNIT TEST</h1>
+    <div class="container">
+      <p class="center" id="completeText">검사가 완료되었습니다.</p>
+      <p class="center" id="completeDesc">
+        아래 코드를 연인에게 전달해주세요. <br />
+        연인이 해당 코드번호를 입력하고 검사를 완료하면, 두 사람의 답변을
+        종합적으로 판단하여 결과가 나타납니다.
+      </p>
+      <p class="center" id="codeText">코드: <%= code %></p>
+    </div>
+    <div class="center-container">
+      <button class="nextButton" id="homeButton">홈으로 이동</button>
+    </div>
+    <script>
+      document
+        .getElementById("homeButton")
+        .addEventListener("click", function () {
+          window.location.href = "/";
+        });
+    </script>
+  </body>
+</html>

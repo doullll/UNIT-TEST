@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="index.css" />
+    <link
+      rel="stylesheet"
+      as="style"
+      crossorigin
+      href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdn-uicons.flaticon.com/2.3.0/uicons-solid-straight/css/uicons-solid-straight.css"
+    />
+
+    <title>UNIT TEST</title>
+  </head>
+  <body>
+    <h1>UNIT TEST</h1>
+    <div class="container">
+      <p id="codeNumberText">코드 번호</p>
+      <div class="center-container">
+        <input id="codeInput" type="text" />
+      </div>
+
+      <p class="desc center" id="codeDesc">
+        연인이 먼저 검사를 진행하고 코드 번호를 전달해준 경우에만 입력해주세요.
+        <br />
+        본인이 첫 검사자라면, 아무것도 입력하지 말고 다음으로 이동해주세요.
+      </p>
+      <div class="center-container">
+        <button class="nextButton">다음</button>
+      </div>
+    </div>
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        const nextButton = document.querySelector(".nextButton");
+        const codeInput = document.getElementById("codeInput");
+        const codeDesc = document.getElementById("codeDesc");
+
+        nextButton.addEventListener("click", function () {
+          const code = codeInput.value.trim();
+
+          if (code) {
+            // 서버에 코드 검증 요청 보내기
+            fetch("/verify-code", {
+              method: "POST",
+              headers: {
+                "Content-Type": "application/json",
+              },
+              body: JSON.stringify({ code: code }),
+            })
+              .then((response) => response.json())
+              .then((data) => {
+                if (data.valid) {
+                  // 유효한 코드일 경우, test.html로 이동
+                  window.location.href = `/test?code=${code}`;
+                } else {
+                  // 유효하지 않은 코드일 경우, 경고 메시지 표시
+                  codeDesc.textContent = "존재하지 않는 코드입니다.";
+                }
+              })
+              .catch((error) => console.error("Error:", error));
+          } else {
+            // 코드 없이 다음 페이지로 이동
+            window.location.href = "/test";
+          }
+        });
+      });
+    </script>
+  </body>
+</html>
