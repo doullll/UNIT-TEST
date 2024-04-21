@@ -186,7 +186,9 @@
           container.innerHTML += `
         <div class="qbox">
           <p class="question center">${question.text}</p>
+   
           <div class="select">
+            <span class="label">1</span>
             ${[1, 2, 3, 4, 5]
               .map(
                 (value) => `
@@ -197,7 +199,7 @@
               `
               )
               .join("")}
-            <span class="label">1 (least) to 5 (most)</span>
+              <span class="label">5</span>
           </div>
         </div>`;
         });

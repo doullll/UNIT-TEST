@@ -161,6 +161,13 @@ h3 {
 /* test.html */
 /* test.html */
 /* test.html */
+#displayCode {
+  text-align: right;
+  font-size: 14px;
+  font-weight: 300;
+  margin-bottom: 6px;
+}
+
 .page {
   text-align: right;
   font-size: 14px;
@@ -276,7 +283,7 @@ h3 {
 .respectively {
   font-weight: 100;
   margin: auto;
-  width: 24%;
+  width: 40%;
   display: flex;
   justify-content: space-around;
 }
@@ -299,6 +306,24 @@ h3 {
   }
   .text {
     margin-bottom: 72px;
+  }
+  /* result2 */
+  #modifier {
+    font-size: 40px;
+    margin-bottom: 10px;
+  }
+  #type {
+    font-size: 40px;
+    margin-bottom: 18px;
+  }
+  .one-dimension {
+    font-size: 22px;
+    margin-bottom: 40px;
+  }
+  .respectively {
+    width: 60%;
+    display: flex;
+    justify-content: space-around;
   }
 }
 
@@ -343,5 +368,26 @@ h3 {
   }
   #completeDesc {
     line-height: 150%;
+  }
+  /* result2 */
+  .result2-complete-text {
+    font-size: 10px;
+  }
+  #modifier {
+    font-size: 20px;
+    margin-bottom: 10px;
+  }
+  #type {
+    font-size: 30px;
+    margin-bottom: 18px;
+  }
+  .one-dimension {
+    font-size: 18px;
+    margin-bottom: 40px;
+  }
+  .respectively {
+    width: 60%;
+    display: flex;
+    justify-content: space-around;
   }
 }
