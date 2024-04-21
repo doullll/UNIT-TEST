@@ -78,7 +78,7 @@ h3 {
   line-height: 140%;
 }
 
-#dimensions p {
+.dimension {
   margin-bottom: 46px;
 }
 
@@ -102,6 +102,24 @@ h3 {
   align-items: center; /* 세로 축에서 중앙 정렬 */
   margin-bottom: 120px;
 }
+.more-text {
+  display: none;
+}
+
+.more-btn {
+  float: right;
+  background: none;
+  text-decoration: underline;
+  border: none;
+  color: gray;
+  cursor: pointer;
+  padding: 0;
+  font-family: Arial, sans-serif;
+}
+
+/* .no-mg {
+  margin-bottom: 0;
+} */
 
 /* code.html */
 /* code.html */
