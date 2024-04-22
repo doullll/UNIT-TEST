@@ -3,6 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <%- include('meta.ejs') %>
     <link rel="stylesheet" href="index.css" />
     <link
       rel="stylesheet"
@@ -15,7 +16,7 @@
       href="https://cdn-uicons.flaticon.com/2.3.0/uicons-solid-straight/css/uicons-solid-straight.css"
     />
 
-    <title>UNIT TEST</title>
+    <title>UNIT 검사 - 커플유형테스트</title>
   </head>
   <body>
     <h1>UNIT TEST</h1>
@@ -27,7 +28,7 @@
         <p class="center" id="completeDesc">두 분의 커플 유형은 ..</p>
         <p class="center" id="modifier">꿈꾸는 별의 항해자들</p>
         <p class="center" id="type"><%= userType %></p>
-        <div id="coupleImg"></div>
+        <div id="coupleImgBox"></div>
       </div>
 
       <div class="one-dimension" id="first-dimension">
@@ -180,6 +181,36 @@
           userTypeDescriptions[userType] || "No description available.";
         nicknameElement.textContent =
           userTypeNicknames[userType] || "Default Nickname";
+      });
+
+      document.addEventListener("DOMContentLoaded", function () {
+        const userTypeImages = {
+          VASO: "/img/VASO.png",
+          VASH: "/img/VASH.png",
+          VAPO: "/img/VAPO.png",
+          VAPH: "/img/VAPH.png",
+          VRSO: "/public/img/VRSO.png",
+          VRSH: "/img/VRSH.png",
+          VRPO: "/img/VRPO.png",
+          VRPH: "/img/VRPH.png",
+          BASO: "/img/BASO.png",
+          BASH: "/img/BASH.png",
+          BAPO: "/img/BAPO.png",
+          BAPH: "/img/BAPH.png",
+          BRSO: "/img/BRSO.png",
+          BRSH: "/img/BRSH.png",
+          BRPO: "/img/BRPO.png",
+          BRPH: "/img/BRPH.png",
+          // 다른 유형의 이미지 경로 추가
+        };
+
+        const userType = "<%= userType %>";
+        const imageElement = document.getElementById("coupleImg");
+        // imageElement.src = userTypeImages[userType] || "img/default.png"; // 기본 이미지 경로 설정
+        document.getElementById(
+          "coupleImgBox"
+        ).innerHTML = `<img id="coupleImg" src="${userTypeImages[userType]}" alt="${userType} 유형 이미지">`;
+        console.log(userType);
       });
     </script>
   </body>

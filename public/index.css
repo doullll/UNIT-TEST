@@ -283,11 +283,19 @@ h3 {
   font-size: 48px;
   margin-bottom: 18px;
 }
-#coupleImg {
-  height: 400px;
-  background-color: aqua;
+#coupleImgBox {
+  width: 100%; /* 전체 너비 */
+  height: 360px; /* 적당한 높이 설정 */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
   margin-bottom: 30px;
-  display: none;
+}
+#coupleImg {
+  display: block;
+  height: 100%;
+  margin: auto;
 }
 
 .one-dimension {
@@ -407,5 +415,9 @@ h3 {
     width: 60%;
     display: flex;
     justify-content: space-around;
+  }
+  #coupleImgBox {
+    height: 300px; /* 적당한 높이 설정 */
+    margin-bottom: 30px;
   }
 }
