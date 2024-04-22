@@ -17,6 +17,10 @@
     "Segoe UI Emoji", "Segoe UI Symbol", sans-serif;
 }
 /* 데스크탑 */
+#kakao-share-button {
+  border: none;
+  text-decoration: underline;
+}
 h1 {
   font-family: "YUniverse-B";
   font-weight: bolder;
@@ -117,6 +121,15 @@ h3 {
   font-family: Arial, sans-serif;
 }
 
+.footer-legal {
+  font-weight: 200;
+  font-size: 14px;
+  margin-top: 200px;
+  text-align: center;
+}
+.footer-legal p {
+  margin-bottom: 12px;
+}
 /* .no-mg {
   margin-bottom: 0;
 } */
@@ -419,5 +432,8 @@ h3 {
   #coupleImgBox {
     height: 300px; /* 적당한 높이 설정 */
     margin-bottom: 30px;
+  }
+  .footer-legal {
+    margin-top: 100px;
   }
 }

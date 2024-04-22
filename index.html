@@ -23,6 +23,8 @@
     <!-- <meta property="og:url" content="페이지_URL" /> -->
     <meta property="og:type" content="website" />
     <meta property="og:locale" content="ko_KR" />
+    <link rel="icon" href="/img/icon.png" type="image/png" />
+
     <link rel="stylesheet" href="index.css" />
     <link
       rel="stylesheet"
@@ -36,11 +38,19 @@
     />
 
     <title>UNIT 검사 - 커플유형테스트</title>
+    <script src="https://developers.kakao.com/sdk/js/kakao.min.js"></script>
+    <script type="text/javascript">
+      // SDK 초기화
+      Kakao.init("2b119eca1cc518d91fd8fa474c6b8d73"); // 여기서 YOUR_APP_KEY는 앞서 얻은 JavaScript 키를 입력합니다.
+      // SDK 초기화 상태 확인
+      console.log(Kakao.isInitialized()); // true가 출력되면 정상적으로 초기화된 것입니다.
+    </script>
   </head>
   <body>
     <h1>UNIT TEST</h1>
 
     <div class="container">
+      <button id="kakao-share-button">카카오톡으로 공유하기</button>
       <p id="category">
         <a
           href="https://luodkrap.notion.site/a64c86060e1b4f7ca096ed880bccbe03?pvs=4"
@@ -133,6 +143,11 @@
         <button id="start">시작하기</button>
       </div>
     </div>
+
+    <div class="footer-legal">
+      <p>© 2024 커플 유형 검사. All rights reserved.</p>
+      <p>Contact: doulzang@gmail.com</p>
+    </div>
     <script>
       document.querySelectorAll(".more-btn").forEach((button) => {
         button.addEventListener("click", function () {
@@ -151,6 +166,33 @@
       document.getElementById("start").addEventListener("click", function () {
         window.location.href = "/code"; // Express 라우트로 이동
       });
+    </script>
+    <script type="text/javascript">
+      document
+        .getElementById("kakao-share-button")
+        .addEventListener("click", function () {
+          Kakao.Link.sendDefault({
+            objectType: "feed",
+            content: {
+              title: "UNIT 검사",
+              description: "커플 유형 테스트",
+              imageUrl: "/img/icon.png", // 이미지 URL 입력
+              link: {
+                mobileWebUrl: "https://example.com",
+                webUrl: "https://example.com",
+              },
+            },
+            buttons: [
+              {
+                title: "웹사이트로 이동",
+                link: {
+                  mobileWebUrl: "https://example.com",
+                  webUrl: "https://example.com",
+                },
+              },
+            ],
+          });
+        });
     </script>
   </body>
 </html>
