@@ -282,6 +282,9 @@ h3 {
   font-weight: 400;
   margin-bottom: 56px;
 }
+#copyButton {
+  border: none;
+}
 
 /* result2.html */
 /* result2.html */

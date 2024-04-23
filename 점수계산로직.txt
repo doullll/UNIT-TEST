@@ -85,3 +85,4 @@ highScoreTendency가 H인 질문에서 answer가 3라면, O에 3점 추가, H에
 highScoreTendency가 H인 질문에서 answer가 2라면, O에 4점 추가, H에 2점 추가
 
 highScoreTendency가 H인 질문에서 answer가 1라면, O에 5점 추가, H에 1점 추가
+

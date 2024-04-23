@@ -15,6 +15,10 @@
       rel="stylesheet"
       href="https://cdn-uicons.flaticon.com/2.3.0/uicons-solid-straight/css/uicons-solid-straight.css"
     />
+    <link
+      rel="stylesheet"
+      href="https://cdn-uicons.flaticon.com/2.3.0/uicons-regular-straight/css/uicons-regular-straight.css"
+    />
     <title>UNIT 검사 - 커플유형테스트</title>
   </head>
   <body>
@@ -26,7 +30,12 @@
         연인이 해당 코드번호를 입력하고 검사를 완료하면, 두 사람의 답변을
         종합적으로 판단하여 결과가 나타납니다.
       </p>
-      <p class="center" id="codeText">코드: <%= code %></p>
+      <p class="center" id="codeText">
+        코드: <span id="code"><%= code %></span>
+        <button class="copyButton" id="copyButton">
+          <i class="fi fi-rs-copy"></i>
+        </button>
+      </p>
     </div>
     <div class="center-container">
       <button class="nextButton" id="homeButton">홈으로 이동</button>
@@ -36,6 +45,21 @@
         .getElementById("homeButton")
         .addEventListener("click", function () {
           window.location.href = "/";
+        });
+
+      // 복사버튼
+      document
+        .getElementById("copyButton")
+        .addEventListener("click", function () {
+          const code = document.getElementById("code").innerText;
+          navigator.clipboard
+            .writeText(code)
+            .then(() => {
+              alert("코드가 클립보드에 복사되었습니다.");
+            })
+            .catch((err) => {
+              console.error("클립보드 복사 실패:", err);
+            });
         });
     </script>
   </body>
